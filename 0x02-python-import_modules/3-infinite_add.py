@@ -5,4 +5,3 @@ if __name__ == '__main__':
     for num in argv[1:]:
         sum_ += int(num)
     print("{:d}".format(sum_))
-

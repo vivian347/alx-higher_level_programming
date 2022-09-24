@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
-"""creating a class Square"""
+"""defining a class Square"""
 class Square:
+    """Represents a square
+
+    Attributes:
+    __size(int): size of a side of a square
+    """
     def __init__(self, size=0):
         """creating instance of size
         Args:

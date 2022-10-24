@@ -1,0 +1,1 @@
+Single ad Multi inheritance

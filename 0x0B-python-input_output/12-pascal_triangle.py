@@ -5,6 +5,7 @@ contains pascal_triangle module
 
 
 def pascal_triangle(n):
+    """returns a list of lists of ints repr the Pascal's triangle n"""
     my_triangle = []
 
     if n <= 0:

@@ -8,13 +8,13 @@ module.exports = class Rectangle {
   }
 
   print () {
-    let stringRectangle = '';
     for (let i = 0; i < this.height; i++) {
-      for (let j = 0; j < this.width; j++) stringRectangle += 'x';
-      stringRectangle += '\n';
+      let stringDisplay = '';
+      for (let j = 0; j < this.width; j++) stringDisplay += 'X';
+      console.log(stringDisplay);
     }
-    console.log(stringRectangle);
   }
+
 
   rotate () {
     const temp = this.width;

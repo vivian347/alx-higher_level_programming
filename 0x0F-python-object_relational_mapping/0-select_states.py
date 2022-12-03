@@ -6,12 +6,12 @@ if __name__ == "__main__":
     import sys
 
     db = MySQLdb.connect(
-            host = "localhost",
-            user = sys.argv[1],
-            passwd = sys.argv[2],
-            db = sys.argv[3],
-            port = 3306,
-            charset = 'utf8'
+            host="localhost",
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            port=3306,
+            charset='utf8'
     )
 
     cur = db.cursor()
@@ -19,4 +19,3 @@ if __name__ == "__main__":
     rows = cur.fetchall()
     for r in rows:
         print("({}, '{}')".format(r[0], r[1]))
-

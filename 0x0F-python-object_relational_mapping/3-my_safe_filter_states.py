@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-"""  script that lists all states from the database hbtn_0e_0_usa: """
+""" script that is safe from sql injections """
 
 if __name__ == "__main__":
     import MySQLdb
     import sys
-
     db = MySQLdb.connect(
-            host="localhost",
+            host='localhost',
             user=sys.argv[1],
             passwd=sys.argv[2],
             db=sys.argv[3],
             port=3306,
             charset='utf8'
     )
-
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id")
+    cmd = "SELECT * FROM states WHERE name = %s ORDER BY id"
+    cur.execute(cmd, (sys.argv[4],))
     rows = cur.fetchall()
     for r in rows:
         print("({}, '{}')".format(r[0], r[1]))

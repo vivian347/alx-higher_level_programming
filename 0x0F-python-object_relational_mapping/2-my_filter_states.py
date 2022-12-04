@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""  script that lists all states from the database hbtn_0e_0_usa: """
+
+""" takes in arg and displays all values where name matches the arg """
 
 if __name__ == "__main__":
     import MySQLdb
@@ -15,10 +16,10 @@ if __name__ == "__main__":
     )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id")
-    rows = cur.fetchall()
+    cur.execute("SELECT * FROM states WHERE name LIKE '%{}%' ORDER BY id".format(sys.argv[4]))
+    rows= cur.fetchall()
     for r in rows:
-        print("({}, '{}')".format(r[0], r[1]))
+        print("({},'{}')".format(r[0], r[1]))
 
     cur.close()
     db.close()

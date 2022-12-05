@@ -15,10 +15,11 @@ if __name__ == "__main__":
     )
 
     cur = db.cursor()
-    cmd = "SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name= %s"
+    cmd = "SELECT cities.name FROM cities JOIN\
+            states ON cities.state_id = states.id WHERE states.name= %s"
     cur.execute(cmd, (sys.argv[4],))
     rows = cur.fetchall()
-    my_list=[]
+    my_list = []
     for row in rows:
         my_list.append(",".join(str(x) for x in row))
     print(*my_list, sep=", ")
